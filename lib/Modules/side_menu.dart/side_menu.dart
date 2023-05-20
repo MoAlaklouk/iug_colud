@@ -79,6 +79,18 @@ class SideMenu extends StatelessWidget {
                       'show trainers',
                       style: getRegularStyle(fontSize: 16.sp),
                     )),
+                ListTile(
+                    onTap: () {
+                      layoutController.getlayoutpage(PAGES.trainingRequests);
+                    },
+                    leading: Icon(
+                      Icons.content_paste_go,
+                      color: Colors.white54,
+                    ),
+                    title: Text(
+                      'training requests',
+                      style: getRegularStyle(fontSize: 16.sp),
+                    )),
               ]),
           ExpansionTile(
               leading: Icon(

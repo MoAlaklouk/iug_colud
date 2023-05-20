@@ -9,17 +9,17 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:iug_cloud/Modules/base/baseGetxController.dart';
 import 'package:path/path.dart' as Path;
 
 import '../../Model/TTrainers.dart';
 import '../../Utils/firebase.dart';
 import '../../widget/snackbar_helper.dart';
 
-class TrainersController extends GetxController {
+class TrainersController extends BaseGetxController {
   TextEditingController newsTitelController = TextEditingController();
   TextEditingController newsDescController = TextEditingController();
 
-  bool isLoading = false;
   @override
   void onInit() async {
     fetchDataFromFirebase();
@@ -30,8 +30,7 @@ class TrainersController extends GetxController {
   List<dynamic> key = [];
   fetchDataFromFirebase() async {
     newsData = [];
-    isLoading = true;
-    update();
+    setLoading(true);
 
     var starCountRef = FirebaseUtiles.fireStore;
     starCountRef.get().then((QuerySnapshot querySnapshot) {
@@ -43,8 +42,7 @@ class TrainersController extends GetxController {
 
       update();
     });
-    isLoading = false;
-    update();
+    setLoading(false);
   }
 
   String? fileName;

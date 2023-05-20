@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:iug_cloud/Modules/trainers/trainingRequests/controller.dart';
 
 import '../Modules/layout/Layout_controller.dart';
 import '../Modules/login/login_controller.dart';
@@ -12,5 +13,6 @@ class Binding extends Bindings {
     Get.lazyPut(() => TrainersController(), fenix: true);
     Get.lazyPut(() => EditNewsScreen(), fenix: true);
     Get.lazyPut(() => LoginController(), fenix: true);
+    Get.lazyPut(() => TrainingRequestsController(), fenix: true);
   }
 }

@@ -1,23 +1,22 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:iug_cloud/Modules/trainers/trainingRequests/controller.dart';
 
-import '../../Helpers/assets_color.dart';
-import '../../Helpers/style_manager.dart';
-import 'edit_trainers.dart';
-import 'trainers_controller.dart';
+import '../../../Helpers/assets_color.dart';
+import '../../../Helpers/style_manager.dart';
+import '../edit_trainers.dart';
 
-class TrainersScreen extends StatelessWidget {
-  const TrainersScreen({Key? key}) : super(key: key);
+class TrainingRequestsScreen extends StatelessWidget {
+  const TrainingRequestsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GetBuilder<TrainersController>(
+      body: GetBuilder<TrainingRequestsController>(
         builder: (controller) => controller.isLoading
             ? Center(
                 child: CircularProgressIndicator(),
@@ -43,13 +42,13 @@ class TrainersScreen extends StatelessWidget {
                               ),
                               DataColumn(
                                 label: Text(
-                                  "Trainers register time",
+                                  "Request time",
                                   style: getRegularStyle(fontSize: 20.sp),
                                 ),
                               ),
                               DataColumn(
                                 label: Text(
-                                  "Trainers description",
+                                  "Request description",
                                   style: getRegularStyle(fontSize: 20.sp),
                                 ),
                               ),
@@ -84,7 +83,7 @@ class TrainersScreen extends StatelessWidget {
                                           arguments: index);
                                     },
                                     child: Text(
-                                      'Edit',
+                                      'accept',
                                       style: getRegularStyle(
                                           fontSize: 18.sp, color: Colors.green),
                                     ),
@@ -92,8 +91,8 @@ class TrainersScreen extends StatelessWidget {
                                   DataCell(
                                     TextButton(
                                       onPressed: () {
-                                        controller.deleteFormFirebase(
-                                            controller.key[index], index);
+                                        // controller.deleteFormFirebase(
+                                        //     controller.key[index], index);
                                       },
                                       child: Text(
                                         'remove',

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:iug_cloud/Modules/trainers/trainingRequests/trainingRequests_screen.dart';
 
 import '../Home/home_screen.dart';
 import '../change_password/change_password_screen.dart';
@@ -23,8 +24,10 @@ class LayoutController extends GetxController {
       case PAGES.CHANGEPASSWORD:
         page = ChangePasswordScreen();
         break;
-      default:
-        return HomeScreen();
+
+      case PAGES.trainingRequests:
+        page = TrainingRequestsScreen();
+        break;
     }
     update();
 
@@ -32,4 +35,4 @@ class LayoutController extends GetxController {
   }
 }
 
-enum PAGES { HOME, NEWS, CREATENEWS, CHANGEPASSWORD }
+enum PAGES { HOME, NEWS, CREATENEWS, CHANGEPASSWORD, trainingRequests }
