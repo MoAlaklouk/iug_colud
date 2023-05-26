@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:iug_cloud/Modules/Advisor/advisor_screen.dart';
+import 'package:iug_cloud/Modules/SendEmail/sendEmail_screen.dart';
 import 'package:iug_cloud/Modules/trainers/trainingRequests/trainingRequests_screen.dart';
 
 import '../Home/home_screen.dart';
@@ -28,6 +30,13 @@ class LayoutController extends GetxController {
       case PAGES.trainingRequests:
         page = TrainingRequestsScreen();
         break;
+      case PAGES.AdvisorScreen:
+        page = AdvisorScreen();
+        break;
+      case PAGES.sendEmail:
+        page = SendEmailScreen();
+        // TODO: Handle this case.
+        break;
     }
     update();
 
@@ -35,4 +44,12 @@ class LayoutController extends GetxController {
   }
 }
 
-enum PAGES { HOME, NEWS, CREATENEWS, CHANGEPASSWORD, trainingRequests }
+enum PAGES {
+  HOME,
+  NEWS,
+  CREATENEWS,
+  CHANGEPASSWORD,
+  trainingRequests,
+  AdvisorScreen,
+  sendEmail
+}

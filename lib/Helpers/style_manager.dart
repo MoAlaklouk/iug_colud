@@ -13,13 +13,17 @@ TextStyle _getTextStyle(
 // regular style
 
 TextStyle getRegularStyle({
-
-  
   double fontSize = 12,
   Color color = Colors.white,
+  Color maxline = Colors.white,
   fontFamily = FontConstants.fontFamily,
 }) {
-  return _getTextStyle(fontSize, fontFamily, FontWeightManager.regular, color);
+  return _getTextStyle(
+    fontSize,
+    fontFamily,
+    FontWeightManager.regular,
+    color,
+  );
 }
 
 TextStyle getLightStyle({

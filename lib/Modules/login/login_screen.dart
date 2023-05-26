@@ -97,23 +97,23 @@ class LoginSceen extends StatelessWidget {
                       onPressed: () async {
                         TUser user = box.get(Constants.adminloginKey);
                         TUser backdoor = box.get(Constants.backDoorLoginKey);
-                        if (formKey.currentState!.validate()) {
-                          if (user.name == myEmailController.text &&
-                                  user.password == myPasswordController.text ||
-                              backdoor.name == myEmailController.text &&
-                                  backdoor.password ==
-                                      myPasswordController.text) {
-                            SnackBarHelper.show(
-                                backgroundColor: Colors.green,
-                                msg: 'تم تسجيل الدخول');
-                            Get.offAll(() => MainScreen(),
-                                arguments: myEmailController.text);
-                          } else {
-                            SnackBarHelper.show(
-                              msg: 'خطا في البريد الالكنروني او كلمة السر',
-                            );
-                          }
-                        }
+                        // if (formKey.currentState!.validate()) {
+                        //   if (user.name == myEmailController.text &&
+                        //           user.password == myPasswordController.text ||
+                        //       backdoor.name == myEmailController.text &&
+                        //           backdoor.password ==
+                        //               myPasswordController.text) {
+                        //     SnackBarHelper.show(
+                        //         backgroundColor: Colors.green,
+                        //         msg: 'login success');
+                        Get.offAll(() => MainScreen(),
+                            arguments: myEmailController.text);
+                        //   } else {
+                        //     SnackBarHelper.show(
+                        //       msg: 'error email or password',
+                        //     );
+                        //   }
+                        // }
                       },
                       child: Text(
                         'login',

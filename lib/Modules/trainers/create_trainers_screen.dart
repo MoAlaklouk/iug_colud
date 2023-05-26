@@ -50,7 +50,8 @@ class CreateNewsScreen extends StatelessWidget {
                                   Expanded(
                                     flex: 3,
                                     child: MyTextField(
-                                      myController:controller. newsTitelController,
+                                      myController:
+                                          controller.newsTitelController,
                                       hint: 'Trainer name',
                                     ),
                                   ),
@@ -119,6 +120,52 @@ class CreateNewsScreen extends StatelessWidget {
                                 children: [
                                   Expanded(
                                     child: Text(
+                                      'email',
+                                      style: getRegularStyle(fontSize: 18.sp),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    flex: 3,
+                                    child: MyTextField(
+                                      myController: controller.emailController,
+                                      textInputType: TextInputType.text,
+                                      maxLines: 1,
+                                      hint: 'email',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 40.h,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      'phone',
+                                      style: getRegularStyle(fontSize: 18.sp),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    flex: 3,
+                                    child: MyTextField(
+                                      myController: controller.phoneController,
+                                      textInputType: TextInputType.text,
+                                      maxLines: 1,
+                                      hint: 'phone',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 40.h,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Text(
                                       'short description',
                                       style: getRegularStyle(fontSize: 18.sp),
                                     ),
@@ -126,7 +173,8 @@ class CreateNewsScreen extends StatelessWidget {
                                   Expanded(
                                     flex: 3,
                                     child: MyTextField(
-                                      myController:controller. newsDescController,
+                                      myController:
+                                          controller.newsDescController,
                                       textInputType: TextInputType.text,
                                       maxLines: 6,
                                       hint: 'short description',
@@ -163,14 +211,21 @@ class CreateNewsScreen extends StatelessWidget {
                               onPressed: () {
                                 if (controller.pickfile == null) {
                                   controller.sendData(
-                                      title:controller. newsTitelController.text,
-                                      description: controller.newsDescController.text,
-                                      imageUrl: '');
+                                      title:
+                                          controller.newsTitelController.text,
+                                      description:
+                                          controller.newsDescController.text,
+                                      imageUrl: '',
+                                      email: controller.emailController.text,
+                                      phone: controller.phoneController.text);
                                 } else {
                                   controller.uploadImage(
-                                    title: controller.newsTitelController.text,
-                                    description: controller.newsDescController.text,
-                                  );
+                                      title:
+                                          controller.newsTitelController.text,
+                                      description:
+                                          controller.newsDescController.text,
+                                      email: controller.emailController.text,
+                                      phone: controller.phoneController.text);
                                 }
                               },
                               child: Text(

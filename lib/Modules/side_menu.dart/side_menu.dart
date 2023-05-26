@@ -94,6 +94,33 @@ class SideMenu extends StatelessWidget {
               ]),
           ExpansionTile(
               leading: Icon(
+                Icons.people,
+                color: Colors.white54,
+              ),
+              title: Text(
+                'Advisor',
+                textAlign: TextAlign.start,
+                style: getRegularStyle(fontSize: 20.sp),
+              ),
+              expandedAlignment: Alignment.centerRight,
+              childrenPadding: EdgeInsets.symmetric(horizontal: 16.w),
+              children: [
+                ListTile(
+                    onTap: () {
+                      layoutController.getlayoutpage(PAGES.AdvisorScreen);
+                    },
+                    leading: Icon(
+                      Icons.person,
+                      color: Colors.white54,
+                    ),
+                    title: Text(
+                      'show Advisor',
+                      textAlign: TextAlign.start,
+                      style: getRegularStyle(fontSize: 16.sp),
+                    )),
+              ]),
+          ExpansionTile(
+              leading: Icon(
                 Icons.settings,
                 color: Colors.white54,
               ),
@@ -107,6 +134,20 @@ class SideMenu extends StatelessWidget {
               children: [
                 ListTile(
                     onTap: () {
+                      layoutController.getlayoutpage(PAGES.sendEmail);
+                    },
+                    leading: Icon(
+                      Icons.key,
+                      color: Colors.white54,
+                    ),
+                    title: Text(
+                      'send Email',
+                      textAlign: TextAlign.start,
+                      style: getRegularStyle(fontSize: 16.sp),
+                    )),
+              
+                ListTile(
+                    onTap: () {
                       layoutController.getlayoutpage(PAGES.CHANGEPASSWORD);
                     },
                     leading: Icon(
@@ -116,7 +157,9 @@ class SideMenu extends StatelessWidget {
                     title: Text(
                       'change password',
                       textAlign: TextAlign.start,
-                      style: getRegularStyle(fontSize: 16.sp),
+                      style: getRegularStyle(
+                        fontSize: 16.sp,
+                      ),
                     )),
               ]),
         ],

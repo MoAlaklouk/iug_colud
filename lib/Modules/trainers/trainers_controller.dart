@@ -19,6 +19,8 @@ import '../../widget/snackbar_helper.dart';
 class TrainersController extends BaseGetxController {
   TextEditingController newsTitelController = TextEditingController();
   TextEditingController newsDescController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
 
   @override
   void onInit() async {
@@ -74,6 +76,8 @@ class TrainersController extends BaseGetxController {
   sendData(
       {required String title,
       required String description,
+      required String email,
+      required String phone,
       required String imageUrl}) async {
     newsData = [];
 
@@ -81,7 +85,9 @@ class TrainersController extends BaseGetxController {
       'title': title,
       'description': description,
       'date': DateFormat('yyyy-MM-dd kk:mm:ss').format(DateTime.now()),
-      'imageUrl': imageUrl
+      'imageUrl': imageUrl,
+      'email': email,
+      'phone': phone
     };
     print('in');
     var database = FirebaseUtiles.fireStore;
@@ -90,9 +96,11 @@ class TrainersController extends BaseGetxController {
         .add(data)
         .then((value) => {
               SnackBarHelper.show(
-                  msg: 'تم الاضافة بنجاح', backgroundColor: Colors.green),
+                  msg: 'success', backgroundColor: Colors.green),
               newsTitelController.text = '',
               newsDescController.text = '',
+              emailController.text = '',
+              phoneController.text = '',
               update(),
             })
         .catchError((e) {
@@ -106,6 +114,8 @@ class TrainersController extends BaseGetxController {
   uploadImage({
     required String title,
     required String description,
+    required String email,
+    required String phone,
   }) async {
     update();
 
@@ -113,10 +123,11 @@ class TrainersController extends BaseGetxController {
     refStorge.child("files/$fileName").putData(pickfile!).then((value) {
       value.ref.getDownloadURL().then((value) => {
             sendData(
-              title: title,
-              description: description,
-              imageUrl: value.isEmpty ? '' : value,
-            ),
+                title: title,
+                description: description,
+                imageUrl: value.isEmpty ? '' : value,
+                email: email,
+                phone: phone),
           });
       update();
     });
@@ -148,8 +159,7 @@ class TrainersController extends BaseGetxController {
       'description': description,
     };
     await FirebaseUtiles.fireStore.doc(key[path]).update(data).then((value) => {
-          SnackBarHelper.show(
-              msg: 'تم الاضافة بنجاح', backgroundColor: Colors.green),
+          SnackBarHelper.show(msg: 'success', backgroundColor: Colors.green),
           newsTitelController.text = '',
           newsDescController.text = '',
           fetchDataFromFirebase(),

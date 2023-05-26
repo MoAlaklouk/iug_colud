@@ -43,6 +43,18 @@ class TrainersScreen extends StatelessWidget {
                               ),
                               DataColumn(
                                 label: Text(
+                                  "Trainers email",
+                                  style: getRegularStyle(fontSize: 20.sp),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  "Trainers phone",
+                                  style: getRegularStyle(fontSize: 20.sp),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
                                   "Trainers register time",
                                   style: getRegularStyle(fontSize: 20.sp),
                                 ),
@@ -66,6 +78,16 @@ class TrainersScreen extends StatelessWidget {
                                 cells: [
                                   DataCell(Text(
                                     controller.newsData[index].title ?? '',
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  )),
+                                  DataCell(Text(
+                                    controller.newsData[index].email ?? '',
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  )),
+                                  DataCell(Text(
+                                    controller.newsData[index].phone ?? '',
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
                                   )),
