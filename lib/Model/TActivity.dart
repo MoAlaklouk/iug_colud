@@ -1,6 +1,7 @@
 class TActivity {
   String? title;
   String? user;
+  String? state;
   DateTime? time;
   String? description;
 
@@ -8,6 +9,7 @@ class TActivity {
     this.title,
     this.user,
     this.time,
+    this.state,
     this.description,
   });
 
@@ -15,6 +17,7 @@ class TActivity {
     title = json['title'];
     user = json['user'];
     time = json['time'];
+    state = json['state'];
     description = json['description'];
   }
 }

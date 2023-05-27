@@ -10,6 +10,8 @@ class FirebaseUtiles {
   static late CollectionReference fireStoreTrainR;
   static late CollectionReference fireStoreAdvisor;
   static late CollectionReference fireStoreActivity;
+  static late CollectionReference trfireStoreActivity;
+  static late CollectionReference advfireStoreMeeting;
 
   static late Reference refStorge;
 
@@ -18,6 +20,8 @@ class FirebaseUtiles {
     fireStoreTrainR = FirebaseFirestore.instance.collection('TrainersReqeust');
     fireStoreAdvisor = FirebaseFirestore.instance.collection('Advisor');
     fireStoreActivity = FirebaseFirestore.instance.collection('Activity');
+    fireStoreActivity = FirebaseFirestore.instance.collection('trActivity');
+    fireStoreActivity = FirebaseFirestore.instance.collection('advMeeting');
 
     refStorge = firebase_storage.FirebaseStorage.instance.ref();
   }

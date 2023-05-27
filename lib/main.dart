@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:iug_cloud/Modules/Advisor_side/main/main_screen.dart';
+import 'package:iug_cloud/Modules/Trainers_side/Home/HomeScreen.dart';
+import 'package:iug_cloud/Modules/Trainers_side/main/main_screen.dart';
+import 'package:iug_cloud/Modules/manager_side/login/login_screen.dart';
+import 'package:iug_cloud/Modules/manager_side/main/main_screen.dart';
 
 import 'App/app.dart';
 import 'App/binding.dart';
 import 'Helpers/constant.dart';
 import 'Helpers/theme_manager.dart';
 import 'Model/TUser.dart';
-import 'Modules/Home/home_screen.dart';
-import 'Modules/change_password/change_password_screen.dart';
-import 'Modules/login/login_screen.dart';
-import 'Modules/trainers/create_trainers_screen.dart';
-import 'Modules/trainers/trainers_screen.dart';
+import 'Modules/Advisor_side/layout/layout_screen.dart';
+import 'Modules/Trainers_side/layout/layout_screen.dart';
 import 'Utils/firebase.dart';
 import 'firebase_options.dart';
 
@@ -54,10 +56,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeManager.appTheme,
         routes: {
           "/": (_) => LoginSceen(),
-          "home": (_) => HomeScreen(),
-          "TrainersScreen": (_) => TrainersScreen(),
-          "CreateNewsScreen": (_) => CreateNewsScreen(),
-          "ChangePasswordScreen": (_) => ChangePasswordScreen(),
+          // "home": (_) => HomeScreen(),
+          // "TrainersScreen": (_) => TrainersScreen(),
+          // "CreateNewsScreen": (_) => CreateNewsScreen(),
+          // "ChangePasswordScreen": (_) => ChangePasswordScreen(),
         },
       ),
     );

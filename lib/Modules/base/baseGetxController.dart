@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../app/app.dart';
+import '../../App/app.dart';
+
 
 class BaseGetxController extends GetxController {
   final _isLoading = false.obs;
